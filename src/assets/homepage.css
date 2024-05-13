@@ -113,3 +113,22 @@ h1, p, input {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     
 }
+
+.saved {
+    padding: 5px 5px;
+    margin: -120px auto;
+    margin-bottom: 10px;
+    width: 300px;
+    height: fit-content;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+}
+
+.saved div {
+    margin: 2px;
+    line-height: 2;
+}

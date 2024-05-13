@@ -53,10 +53,33 @@ export default function HomePage() {
     const key = String(randomKey);
     const storageData = JSON.stringify(word);
     localStorage.setItem(key, storageData);
+
+    //Reseting search word state
+    setWord("");
   }
 
   //Recovering from localStorage
-  //TODO
+  function recoverStorage() {
+    //Selection and update of the visibility property for the table area
+    const savedInfo = document.querySelector(".saved");
+    savedInfo.style.visibility = "visible";
+
+    //Data from localStorage
+    for (let key in localStorage) {
+      const newDiv = document.createElement("div");
+      if (localStorage.getItem(key) != null) {
+        newDiv.textContent = `${JSON.parse(localStorage.getItem(key))}`;
+        savedInfo.appendChild(newDiv);
+      }
+    }
+
+    //No data selected
+    if (localStorage.length < 1) {
+      const emptyDiv = document.createElement("div");
+      emptyDiv.textContent = "No Selected Data";
+      savedInfo.appendChild(emptyDiv);
+    }
+  }
 
   return (
     <>
@@ -80,7 +103,7 @@ export default function HomePage() {
         </div>
 
         <div className="bookmark">
-          <button id="mark">
+          <button id="mark" onClick={recoverStorage}>
             {" "}
             <FaBookmark />{" "}
           </button>
@@ -92,6 +115,16 @@ export default function HomePage() {
           <IoMdClose onClick={handleCloseModal} />
         </div>
         <div className="text-def"></div>
+      </div>
+
+      <div className="saved">
+        <h3
+          style={{
+            margin: "10px",
+          }}
+        >
+          Quick references
+        </h3>
       </div>
     </>
   );
