@@ -34,6 +34,7 @@ export default function HomePage() {
     //Adding new button below the definition
     const newButton = document.createElement("button");
     newButton.setAttribute("id", "newbutton");
+    newButton.setAttribute("title", "Add Bookmark");
     newButton.innerHTML = '<i class="fa-solid fa-book-bookmark"></i>';
     text.appendChild(newButton);
 
@@ -97,13 +98,17 @@ export default function HomePage() {
             value={word}
             onChange={handleInputChange}
           />
-          <button id="search" onClick={() => handleFetch(word)}>
+          <button id="search" onClick={() => handleFetch(word)} title="Search">
             <IoSearch />
           </button>
         </div>
 
         <div className="bookmark">
-          <button id="mark" onClick={recoverStorage}>
+          <button
+            id="mark"
+            onClick={recoverStorage}
+            title="Favorite References"
+          >
             {" "}
             <FaBookmark />{" "}
           </button>
