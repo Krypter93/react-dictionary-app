@@ -132,3 +132,19 @@ h1, p, input {
     margin: 2px;
     line-height: 2;
 }
+
+/* Media queries */
+@media only screen and (max-device-width: 480px) {
+    .container {
+        margin-top: -100px;
+        
+    }
+    
+    .dict-info input {
+        width: 350px;
+    }
+
+    .saved {
+        margin-top: -150px;
+    }
+}
