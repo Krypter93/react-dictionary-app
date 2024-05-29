@@ -144,6 +144,10 @@ h1, p, input {
         width: 350px;
     }
 
+    .definition {
+        width: 90%;
+    }
+
     .saved {
         margin-top: -150px;
     }
